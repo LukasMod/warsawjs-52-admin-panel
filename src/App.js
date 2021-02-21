@@ -1,6 +1,6 @@
 import React from 'react';
 import { ChakraProvider, theme } from '@chakra-ui/react';
-import LoginPage from './pages/login/index';
+import LoginPage from './pages/login';
 
 function App() {
   return (

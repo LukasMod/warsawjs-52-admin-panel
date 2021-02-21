@@ -12,7 +12,6 @@ const Users = () => {
     <Box>
       {users.map(user => (
         <Box key={user.id}>
-          {' '}
           {user.firstName} {user.lastName}
         </Box>
       ))}

@@ -3,7 +3,7 @@ import { ChakraProvider, theme } from '@chakra-ui/react';
 import LoginPage from './pages/login';
 
 if (process.env.REACT_APP_ENABLE_MOCKS == 1) {
-  const { worker } = require('./mocks/browser');
+  const { worker } = require('./api/mocks/browser');
   worker.start();
 }
 

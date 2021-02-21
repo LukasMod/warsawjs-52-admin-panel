@@ -22,6 +22,23 @@ function LoginForm() {
     });
   };
 
+  const validateEmail = value => {
+    if (!value) {
+      return 'You should enter email address';
+    } //else if()
+    if (value.length < 4) {
+      return 'E-mail address is shorter than expected';
+    }
+    return true;
+  };
+
+  const validatePassword = value => {
+    if (!value) {
+      return 'You should enter password';
+    }
+    return true;
+  };
+
   return (
     <form onSubmit={handleSubmit(submitForm)}>
       <Stack spacing={3}>
@@ -29,7 +46,8 @@ function LoginForm() {
           <FormLabel>E-mail</FormLabel>
           <Input
             name="email"
-            ref={register}
+            type="email"
+            ref={register({ validate: validateEmail })}
             placeholder="test@test.com"
             size="lg"
             disabled={formState.isSubmitting}
@@ -43,8 +61,8 @@ function LoginForm() {
           <Input
             name="password"
             type="password"
-            ref={register}
-            placeholder="test@test.com"
+            ref={register({ validate: validatePassword })}
+            placeholder="********"
             size="lg"
             disabled={formState.isSubmitting}
           />
